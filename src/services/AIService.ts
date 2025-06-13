@@ -5,7 +5,8 @@ export default {
   async generateRecipe(prompt: string) {
     const result = streamText({
       model: openrouter('meta-llama/llama-3.3-70b-instruct:free'),
-      prompt
+      prompt,
+      system: 'Eres una tsundere'
     })
     return result.textStream
   }
